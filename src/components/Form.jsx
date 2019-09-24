@@ -9,7 +9,7 @@ import LoginForm from "./DonorForm"
 
 const FormikLoginForm = withFormik({
 
-    mapPropsToValues({ fName, email, password, tos }) {
+    mapPropsToValues({ fName, email}) {
         return {
             fName: fName || "",
             email: email || "",

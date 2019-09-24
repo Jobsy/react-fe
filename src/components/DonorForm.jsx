@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Form, Field } from "formik";
+// import { Button, Checkbox, Form } from "semantic-ui-react";
 
 // import Display from "./Display";
 
@@ -100,27 +101,6 @@ export default LoginForm;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React from "react";
 // // import 'semantic-ui-css/semantic.min.css';
 // import { Button, Checkbox, Form } from 'semantic-ui-react';
@@ -162,4 +142,4 @@ export default LoginForm;
 
 // export default DonorForm;
 
-
+ 
