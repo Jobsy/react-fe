@@ -1,27 +1,26 @@
 
 import React from "react";
-import 'semantic-ui-css/semantic.min.css';
+// import 'semantic-ui-css/semantic.min.css';
+import { Button, Checkbox, Form } from 'semantic-ui-react';
+
 
 function DonorForm() {
 
   return (
-    <form class="ui form">
-      <div class="field">
+    <Form>
+      <Form.Field>
         <label>First Name</label>
-        <input type="text" name="first-name" placeholder="First Name" />
-      </div>
-      <div class="field">
+        <input placeholder='First Name' />
+      </Form.Field>
+      <Form.Field>
         <label>Last Name</label>
-        <input type="text" name="last-name" placeholder="Last Name" />
-      </div>
-      <div class="field">
-        <div class="ui checkbox">
-          <input type="checkbox" tabindex="0" class="hidden" />
-          <label>I agree to the Terms and Conditions</label>
-        </div>
-      </div>
-      <button class="ui button" type="submit">Submit</button>
-    </form>
+        <input placeholder='Last Name' />
+      </Form.Field>
+      <Form.Field>
+        <Checkbox label='I agree to the Terms and Conditions' />
+      </Form.Field>
+      <Button type='submit'>Submit</Button>
+    </Form>
   )
 }
 
