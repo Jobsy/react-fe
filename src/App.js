@@ -3,14 +3,14 @@ import React from "react";
 
 
 import LoginForm from "./components/DonorForm";
-import Form from "./components/Form";
+import {FormikLoginForm1, FormikLoginForm2} from "./components/Form";
 
 
 function App() {
   return (
     <div className="App">
-      {/* <DonorForm /> */}
-      <Form />
+      <FormikLoginForm1 />
+      <FormikLoginForm2 />
     </div>
   );
 }

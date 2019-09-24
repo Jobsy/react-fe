@@ -4,7 +4,7 @@ import { Form as FormikForm, Field as FormikField } from "formik";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 
 
-function LoginForm({ errors, touched, values, status }) {
+function DonorForm({ errors, touched, values, status }) {
 
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -102,5 +102,5 @@ function LoginForm({ errors, touched, values, status }) {
 }
 
 
-export default LoginForm;
+export default DonorForm;
 
