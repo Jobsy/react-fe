@@ -32,7 +32,7 @@ const FormikLoginForm = withFormik({
             email: values.email,
         };
 
-        axios.post(" https://reqres.in/api/users", sentData)
+        axios.post("https://reqres.in/api/users", sentData)
             .then(response => {
                 setStatus(response.data);
                 resetForm();

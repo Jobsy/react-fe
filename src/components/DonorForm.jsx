@@ -1,10 +1,13 @@
 
 import React, { useState, useEffect } from "react";
-import { Form, Field } from "formik";
-// import { Button, Checkbox, Form } from "semantic-ui-react";
+import { Form as FormikForm, Field as FormikField } from "formik";
+// import styled from 'styled-components'
+import { Button, Checkbox, Form } from "semantic-ui-react";
 
 // import Display from "./Display";
-
+// const StyledLabel = styled.label`
+//   background-color: yellow;
+// `
 
 function LoginForm({ errors, touched, values, status }) {
 
@@ -18,43 +21,54 @@ function LoginForm({ errors, touched, values, status }) {
 
   return (
 
-    <Form>
+    
+            <FormikForm>
+<Form>
+      <Form.Group widths='equal'>
+      <Form.Field>
       <label>
       First Name:
-        <Field
+        <FormikField
           type="text"
           name="fName"
           placeholder="First Name"
         />
         {touched.fName && errors.fName && <p>{errors.fName}</p>}
       </label>
-      <br />
-
+      {/* <br /> */}
+      </Form.Field>
+      <Form.Field>
       <label>
       Middle Name:
-        <Field
+        <FormikField
           type="text"
           name="mName"
           placeholder="Middle Name"
         />
         {touched.mName && errors.mName && <p>{errors.mName}</p>}
       </label>
-      <br />
+      {/* <br /> */}
+      </Form.Field>
+      <Form.Field>
 
       <label>
       Last Name:
-        <Field
+        <FormikField
           type="text"
           name="lName"
           placeholder="Last Name"
         />
         {touched.lName && errors.lName && <p>{errors.lName}</p>}
       </label>
-      <br />
+      {/* <br /> */}
+      </Form.Field>
+
+      </Form.Group>
+
 
       <label>
         Email:
-        <Field
+        <FormikField
           type="email"
           name="email"
           placeholder="Enter your email addres"
@@ -65,7 +79,7 @@ function LoginForm({ errors, touched, values, status }) {
 
       <label>
         Phone Number:
-        <Field
+        <FormikField
           type="phone"
           name="phone"
           placeholder="+233 888 8888 888"
@@ -79,7 +93,7 @@ function LoginForm({ errors, touched, values, status }) {
       <label>
       Mailing list :
           <br />
-        <Field
+        <FormikField
           type="checkbox"
           name="mList"
           checked={values.mList}
@@ -92,6 +106,7 @@ function LoginForm({ errors, touched, values, status }) {
       <button>Submit</button>
       {/* <Display users={users} /> */}
     </Form>
+    </FormikForm>
 
   );
 }
@@ -143,3 +158,128 @@ export default LoginForm;
 // export default DonorForm;
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <Form>
+//       <label>
+//       First Name:
+//         <Field
+//           type="text"
+//           name="fName"
+//           placeholder="First Name"
+//         />
+//         {touched.fName && errors.fName && <p>{errors.fName}</p>}
+//       </label>
+//       <br />
+
+//       <label>
+//       Middle Name:
+//         <Field
+//           type="text"
+//           name="mName"
+//           placeholder="Middle Name"
+//         />
+//         {touched.mName && errors.mName && <p>{errors.mName}</p>}
+//       </label>
+//       <br />
+
+//       <label>
+//       Last Name:
+//         <Field
+//           type="text"
+//           name="lName"
+//           placeholder="Last Name"
+//         />
+//         {touched.lName && errors.lName && <p>{errors.lName}</p>}
+//       </label>
+//       <br />
+
+//       <label>
+//         Email:
+//         <Field
+//           type="email"
+//           name="email"
+//           placeholder="Enter your email addres"
+//         />
+//         {touched.email && errors.email && <p>{errors.email}</p>}
+//       </label>
+//       <br />
+
+//       <label>
+//         Phone Number:
+//         <Field
+//           type="phone"
+//           name="phone"
+//           placeholder="+233 888 8888 888"
+//         />
+//         {touched.phone && errors.phone && <p>{errors.phone}</p>}
+//       </label>
+//       <br />
+
+      
+
+//       <label>
+//       Mailing list :
+//           <br />
+//         <Field
+//           type="checkbox"
+//           name="mList"
+//           checked={values.mList}
+//         /> Add Me
+//           <br />
+//         {touched.mList && errors.mList && <p>{errors.mList}</p>}
+//       </label>
+//       <br />
+
+//       <button>Submit</button>
+//       {/* <Display users={users} /> */}
+//     </Form>
