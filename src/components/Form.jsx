@@ -9,50 +9,40 @@ import LoginForm from "./DonorForm"
 
 const FormikLoginForm = withFormik({
 
-    mapPropsToValues({ name, email, password, tos }) {
-      return {
-        name: name || "",
-        email: email || "",
-        password: password || "",
-        tos: tos || false
-      };
+    mapPropsToValues({ fName, email, password, tos }) {
+        return {
+            fName: fName || "",
+            email: email || "",
+        };
     },
-  
+
     validationSchema: Yup.object().shape({
-      name: Yup.string()
-        .min(3)
-        .required(),
-      email: Yup.string()
-        .email()
-        .required(),
-      password: Yup.string()
-        .min(6)
-        .required(),
-      tos: Yup.boolean()
-        .oneOf([true], "Must accept Terms of Service to submit"),
+        fName: Yup.string()
+            .min(3)
+            .required(),
+        email: Yup.string()
+            .email()
+            .required()
     }),
-  
+
     handleSubmit(values, { resetForm, setStatus }) {
-  
-      const sentData = {
-            name: values.name,
-        email: values.email,
-        password: values.password,
-        tos: values.tos
-      };
-  
-      axios.post(" https://reqres.in/api/users", sentData)
-        .then(response => {
-          setStatus(response.data);
-          resetForm();
-        })
-        .catch(error => {
-          console.log(error);
-        })
+
+        const sentData = {
+            fName: values.fName,
+            email: values.email,
+        };
+
+        axios.post(" https://reqres.in/api/users", sentData)
+            .then(response => {
+                setStatus(response.data);
+                resetForm();
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
-  
-  })(LoginForm);
-  
-  
-  export default FormikLoginForm;
-  
+
+})(LoginForm);
+
+
+export default FormikLoginForm;
