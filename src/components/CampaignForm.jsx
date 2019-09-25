@@ -7,6 +7,11 @@ import { Button, Checkbox, Form } from "semantic-ui-react";
 function CampaignForm({ errors, touched, values, status }) {
 
   const [users, setUsers] = useState([]);
+  const [usersState, setUsersState] = useState({ checked: false });
+  
+  const toggle = () => setUsersState((prevState) => ({ checked: !prevState.checked }))
+
+
   useEffect(() => {
     if (status) {
       setUsers(users.concat(status))

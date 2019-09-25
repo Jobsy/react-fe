@@ -7,6 +7,10 @@ import { Button, Checkbox, Form } from "semantic-ui-react";
 function DonorForm({ errors, touched, values, status }) {
 
   const [users, setUsers] = useState([]);
+  const [usersState, setUsersState] = useState({ checked: false });
+  const toggle = () => setUsersState((prevState) => ({ checked: !prevState.checked }));
+
+
   useEffect(() => {
     if (status) {
       setUsers(users.concat(status))
@@ -18,9 +22,9 @@ function DonorForm({ errors, touched, values, status }) {
   return (
 
     <FormikForm>
-      <Form style={{ width: 800, margin: "auto"}}>
+      <Form style={{ width: 800, margin: "auto" }}>
         <h1>Donor Form</h1>
-        <Form.Group widths='equal'>
+        <Form.Group widths="equal">
           <Form.Field>
             <label>
               First Name:
@@ -58,9 +62,9 @@ function DonorForm({ errors, touched, values, status }) {
           </Form.Field>
         </Form.Group>
 
-        <Form.Field label='Gender' control='select'>
-          <option value='female'>Female</option>
-          <option value='male'>Male</option>
+        <Form.Field label="Gender" control="select">
+          <option value="female">Female</option>
+          <option value="male">Male</option>
         </Form.Field>
 
         <Form.Field>
@@ -75,20 +79,38 @@ function DonorForm({ errors, touched, values, status }) {
           </label>
         </Form.Field>
 
-        <Form.Input label='Phone' type="phone" placeholder='+233 888 8888 888' />
-        <Form.TextArea label='Home Address' placeholder='Your Billing/Contact Home Address' />
+        <Form.Input label="Phone" type="phone" placeholder="+233 888 8888 888" />
+        <Form.TextArea label="Home Address" placeholder="Your Billing/Contact Home Address" />
+
+        <Form.Group widths="equal">
+          <Form.Input label="Donation" type="number" placeholder="Amount in Dollars" />
+          <Form.Field>
+          <label>
+             <br/>
+              <Button size="big" animated="fade">
+              <Button.Content visible onClick={toggle}>Donation Type</Button.Content>
+              <Button.Content hidden  onClick={toggle}>Check if Money</Button.Content>
+            </Button>
+            <Checkbox
+              label="Money or Others"
+              onChange={toggle}
+              checked={usersState.checked}
+            />
+            </label>
+          </Form.Field>
+        </Form.Group>
 
         <Form.Field>
           <label>
             Mailing list :
           <br />
-            <Form.Checkbox label='Add me to your mailing list' />
+            <Form.Checkbox label="Add me to your mailing list" />
             {/* {touched.mList && errors.mList && <p>{errors.mList}</p>} */}
           </label>
         </Form.Field>
 
         <Form.Field>
-          <Button animated='fade'>
+          <Button size="huge"animated="fade">
             <Button.Content visible style={{ width: 100 }}>Submit</Button.Content>
             <Button.Content hidden>Click to Submit</Button.Content>
           </Button>

@@ -29,6 +29,7 @@ export  const FormikLoginForm1 = withFormik({
         const sentData = {
             fName: values.fName,
             email: values.email,
+            
         };
 
         axios.post("https://reqres.in/api/users", sentData)
@@ -42,11 +43,6 @@ export  const FormikLoginForm1 = withFormik({
     }
 
 })(DonorForm);
-
-
-//  FormikLoginForm;
-
-
 
 
 export  const FormikLoginForm2 = withFormik({
