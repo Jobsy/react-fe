@@ -8,7 +8,7 @@ function CampaignForm({ errors, touched, values, status }) {
 
   const [users, setUsers] = useState([]);
   const [usersState, setUsersState] = useState({ checked: false });
-  
+
   const toggle = () => setUsersState((prevState) => ({ checked: !prevState.checked }))
 
 
@@ -23,49 +23,20 @@ function CampaignForm({ errors, touched, values, status }) {
   return (
 
     <FormikForm>
-      <Form style={{ width: 800, margin: "auto"}}>
+      <Form style={{ width: 800, margin: "auto" }}>
         <h1>Campaign Form</h1>
-        <Form.Group widths='equal'>
-          <Form.Field>
-            <label>
-              First Name:
-              <FormikField
-                type="text"
-                name="fName"
-                placeholder="First Name"
-              />
-              {touched.fName && errors.fName && <p>{errors.fName}</p>}
-            </label>
-          </Form.Field>
+        <br />
 
-          <Form.Field>
-            <label>
-              Middle Name:
+        <Form.Field>
+          <label>
+            Campaign Name:
               <FormikField
-                type="text"
-                name="mName"
-                placeholder="Middle Name"
-              />
-              {/* {touched.mName && errors.mName && <p>{errors.mName}</p>} */}
-            </label>
-          </Form.Field>
-
-          <Form.Field>
-            <label>
-              Last Name:
-              <FormikField
-                type="text"
-                name="lName"
-                placeholder="Last Name"
-              />
-              {/* {touched.lName && errors.lName && <p>{errors.lName}</p>} */}
-            </label>
-          </Form.Field>
-        </Form.Group>
-
-        <Form.Field label='Gender' control='select'>
-          <option value='female'>Female</option>
-          <option value='male'>Male</option>
+              type="text"
+              name="cName"
+              placeholder="Campaign Name"
+            />
+            {touched.cName && errors.cName && <p>{errors.cName}</p>}
+          </label>
         </Form.Field>
 
         <Form.Field>
@@ -74,23 +45,17 @@ function CampaignForm({ errors, touched, values, status }) {
             <FormikField
               type="email"
               name="email"
-              placeholder="Enter your email addres"
+              placeholder="Enter organisation email address"
             />
             {touched.email && errors.email && <p>{errors.email}</p>}
           </label>
         </Form.Field>
 
-        <Form.Input label='Phone' type="phone" placeholder='+233 888 8888 888' />
-        <Form.TextArea label='Home Address' placeholder='Your Billing/Contact Home Address' />
-
-        <Form.Field>
-          <label>
-            Mailing list :
-          <br />
-            <Form.Checkbox label='Add me to your mailing list' />
-            {/* {touched.mList && errors.mList && <p>{errors.mList}</p>} */}
-          </label>
-        </Form.Field>
+        <Form.Input label="Office Phone" type="phone" placeholder="+233 888 8888 888" />
+        
+        <Form.TextArea label="Address" placeholder="Campaign Office Address" />
+        
+        <Form.TextArea label="Campaign Goals" placeholder="Tell us about your campaign goals and what you aim to achieve with donated funds" />
 
         <Form.Field>
           <Button animated='fade'>

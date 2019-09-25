@@ -118,7 +118,7 @@ function DonorForm({ errors, touched, values, status }) {
             <FormikField
               type="email"
               name="email"
-              placeholder="Enter your email addres"
+              placeholder="Enter your email address"
             />
             {touched.email && errors.email && <p>{errors.email}</p>}
           </label>
