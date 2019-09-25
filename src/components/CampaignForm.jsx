@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Form as FormikForm, Field as FormikField } from "formik";
 import { Button, Checkbox, Form } from "semantic-ui-react";
@@ -80,4 +79,3 @@ function CampaignForm({ errors, touched, values, status }) {
 
 
 export default CampaignForm;
-
