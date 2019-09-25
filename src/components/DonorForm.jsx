@@ -65,6 +65,7 @@ function DonorForm({ errors, touched, values, status }) {
     <FormikForm>
       <Form style={{ width: 800, margin: "auto" }}>
         <h1>Donor Form</h1>
+        <br />
         <Form.Group widths="equal">
           <Form.Field>
             <label>

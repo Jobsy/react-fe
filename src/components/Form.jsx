@@ -8,15 +8,15 @@ import CampaignForm from "./CampaignForm";
 
 export  const FormikLoginForm1 = withFormik({
 
-    mapPropsToValues({ cName, email}) {
+    mapPropsToValues({ fName, email}) {
         return {
-            cName: cName || "",
+            fName: fName || "",
             email: email || "",
         };
     },
 
     validationSchema: Yup.object().shape({
-        cName: Yup.string()
+        fName: Yup.string()
             .min(3)
             .required(),
         email: Yup.string()
@@ -27,7 +27,7 @@ export  const FormikLoginForm1 = withFormik({
     handleSubmit(values, { resetForm, setStatus }) {
 
         const sentData = {
-            cName: values.cName,
+            fName: values.fName,
             email: values.email,
             
         };
