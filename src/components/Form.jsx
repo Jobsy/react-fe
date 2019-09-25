@@ -8,15 +8,15 @@ import CampaignForm from "./CampaignForm";
 
 export  const FormikLoginForm1 = withFormik({
 
-    mapPropsToValues({ fName, email}) {
+    mapPropsToValues({ cName, email}) {
         return {
-            fName: fName || "",
+            cName: cName || "",
             email: email || "",
         };
     },
 
     validationSchema: Yup.object().shape({
-        fName: Yup.string()
+        cName: Yup.string()
             .min(3)
             .required(),
         email: Yup.string()
@@ -27,7 +27,7 @@ export  const FormikLoginForm1 = withFormik({
     handleSubmit(values, { resetForm, setStatus }) {
 
         const sentData = {
-            fName: values.fName,
+            cName: values.cName,
             email: values.email,
             
         };
@@ -47,15 +47,15 @@ export  const FormikLoginForm1 = withFormik({
 
 export  const FormikLoginForm2 = withFormik({
 
-    mapPropsToValues({ fName, email}) {
+    mapPropsToValues({ cName, email}) {
         return {
-            fName: fName || "",
+            cName: cName || "",
             email: email || "",
         };
     },
 
     validationSchema: Yup.object().shape({
-        fName: Yup.string()
+        cName: Yup.string()
             .min(3)
             .required(),
         email: Yup.string()
@@ -66,7 +66,7 @@ export  const FormikLoginForm2 = withFormik({
     handleSubmit(values, { resetForm, setStatus }) {
 
         const sentData = {
-            fName: values.fName,
+            cName: values.cName,
             email: values.email,
         };
 
