@@ -29,7 +29,7 @@ function CampaignForm({ errors, touched, values, status }) {
 
         <Form.Field>
           <label>
-            Campaign Name:
+            Campaign Name
               <FormikField
               type="text"
               name="cName"
@@ -38,10 +38,11 @@ function CampaignForm({ errors, touched, values, status }) {
             {touched.cName && errors.cName && <p>{errors.cName}</p>}
           </label>
         </Form.Field>
+        <br />
 
         <Form.Field>
           <label>
-            Email:
+            Email
             <FormikField
               type="email"
               name="email"
@@ -50,15 +51,20 @@ function CampaignForm({ errors, touched, values, status }) {
             {touched.email && errors.email && <p>{errors.email}</p>}
           </label>
         </Form.Field>
+        <br />
 
         <Form.Input label="Office Phone" type="phone" placeholder="+233 888 8888 888" />
+        <br />
         
         <Form.TextArea label="Address" placeholder="Campaign Office Address" />
+        <br />
         
         <Form.TextArea label="Campaign Goals" placeholder="Tell us about your campaign goals and what you aim to achieve with donated funds" />
+        <br />
+        <br />
 
         <Form.Field>
-          <Button animated='fade'>
+          <Button size="huge" animated='fade'>
             <Button.Content visible style={{ width: 100 }}>Submit</Button.Content>
             <Button.Content hidden>Click to Submit</Button.Content>
           </Button>
