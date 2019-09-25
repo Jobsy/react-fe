@@ -3,8 +3,8 @@ import React from 'react';
 
 
 export const Display1 = props => {
-console.log(props)
-  return (
+  
+    return (
     <div>
       <h3>Registered Donors</h3>
       {props.users.map(user => (
@@ -21,7 +21,7 @@ console.log(props)
 };
 
 export const Display2 = props => {
-    console.log(props)
+
       return (
         <div>
           <h3>Registered Campaign</h3>
@@ -34,6 +34,3 @@ export const Display2 = props => {
         </div>
       )
     };
-
-
-// export default Display1;
