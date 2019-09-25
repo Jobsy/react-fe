@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Form as FormikForm, Field as FormikField } from "formik";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 
+import {Display2} from "./Display";
 
 function CampaignForm({ errors, touched, values, status }) {
 
@@ -70,7 +71,7 @@ function CampaignForm({ errors, touched, values, status }) {
           </Button>
         </Form.Field>
 
-        {/* <Display users={users} /> */}
+        <Display2 users={users} />
       </Form>
     </FormikForm>
 

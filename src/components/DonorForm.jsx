@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Form as FormikForm, Field as FormikField } from "formik";
 import { Button, Checkbox, Form, Dropdown } from "semantic-ui-react";
 
-import Display from "./Display";
+import {Display1} from "./Display";
 
 const campaignOptions = [
   {
@@ -188,7 +188,7 @@ function DonorForm({ errors, touched, values, status }) {
         </Form.Field>
         <br />
 
-        <Display users={users} />
+        <Display1 users={users} />
       </Form>
     </FormikForm>
 
