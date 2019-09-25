@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Form as FormikForm, Field as FormikField } from "formik";
 import { Button, Checkbox, Form, Dropdown } from "semantic-ui-react";
 
-
+import Display from "./Display";
 
 const campaignOptions = [
   {
@@ -50,7 +50,7 @@ function DonorForm({ errors, touched, values, status }) {
   const [users, setUsers] = useState([]);
   const [usersState, setUsersState] = useState({ checked: false });
   const toggle = () => setUsersState((prevState) => ({ checked: !prevState.checked }));
-
+  // getValue = (e, { value }) => setState({ value })
 
   useEffect(() => {
     if (status) {
@@ -129,6 +129,7 @@ function DonorForm({ errors, touched, values, status }) {
         <Form.Input label="Phone" type="phone" placeholder="+233 888 8888 888" />
         <br />
 
+
         <Form.TextArea label="Home Address" placeholder="Your Billing/Contact Home Address" />
         <br />
 
@@ -168,10 +169,14 @@ function DonorForm({ errors, touched, values, status }) {
           <label>
             Mailing list :
           <br />
-            <Form.Checkbox label="Add me to your mailing list" />
+            <Form.Checkbox
+              name="mList"
+              // onChange={getValue}
+              label="Add me to your mailing list" />
             {/* {touched.mList && errors.mList && <p>{errors.mList}</p>} */}
           </label>
         </Form.Field>
+        {/* <FormikField type="checkbox"  placeholder="Add me to your mailing list" /> */}
         <br />
         <br />
 
@@ -183,7 +188,7 @@ function DonorForm({ errors, touched, values, status }) {
         </Form.Field>
         <br />
 
-        {/* <Display users={users} /> */}
+        <Display users={users} />
       </Form>
     </FormikForm>
 

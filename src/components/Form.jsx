@@ -8,10 +8,14 @@ import CampaignForm from "./CampaignForm";
 
 export  const FormikLoginForm1 = withFormik({
 
-    mapPropsToValues({ fName, email}) {
+    mapPropsToValues({ fName, mName, lName, mList, email}) {
         return {
             fName: fName || "",
+            mName: mName || "",
+            lName: lName || "",
             email: email || "",
+            mList: mList || "",
+            
         };
     },
 
@@ -28,7 +32,10 @@ export  const FormikLoginForm1 = withFormik({
 
         const sentData = {
             fName: values.fName,
+            mName: values.mName,
+            lName: values.lName,
             email: values.email,
+            mList: values.mList,
             
         };
 
